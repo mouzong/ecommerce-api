@@ -1,17 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage("Clean Up"){
-            steps{
-                deleteDir()
-            }
-
-        }
-        stage("Clone Repo"){
-             steps{
-                    sh "git clone https://github.com/mouzong/ecommerce-api.git"
-            }
-        }
+//         stage("Clean Up"){
+//             steps{
+//                 deleteDir()
+//             }
+//
+//         }
+//         stage("Clone Repo"){
+//              steps{
+//                     sh "git clone https://github.com/mouzong/ecommerce-api.git"
+//             }
+//         }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
@@ -30,7 +30,7 @@ pipeline {
         stage('Deliver') {
             steps {
                 echo 'here comes the dark coder'
-                sh 'sudo ./jenkins/scripts/deliver.sh'
+//                 sh 'sudo ./jenkins/scripts/deliver.sh'
             }
         }
     }
