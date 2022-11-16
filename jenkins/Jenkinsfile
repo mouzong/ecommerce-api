@@ -18,7 +18,8 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                echo 'here comes the dark coder'
+                sh 'sudo ./jenkins/scripts/deliver.sh'
             }
         }
     }
